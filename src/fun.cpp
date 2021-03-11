@@ -51,15 +51,17 @@ unsigned int faStr1(const char *str) {
     int count = 0;
     bool inWord = false;
     bool isCorrectWord = true;
-    while (*str) {
-        if (*str != ' ' && isCorrectWord) {
-            if (isDigit(*str)) isCorrectWord = false;
+    int index = 0;
+    while (str[index] != '\0') {
+        if (str[index] != ' ' && isCorrectWord) {
+            if (isDigit(str[index])) isCorrectWord = false;
             inWord = true;
         }
-        else if (*str == ' ' && inWord) {
+        else if (str[index] == ' ' && inWord) {
             count++;
             inWord = false;
         }
+        index++;
     }
     if (inWord && isCorrectWord) count++;
     return count;
@@ -68,20 +70,22 @@ unsigned int faStr2(const char *str) {
     int count = 0;
     bool inWord = false;
     bool isCorrectWord = true;
-    while (*str) {
-        if (*str != ' ' && isCorrectWord) {
+    int index = 0;
+    while (str[index] != '\0') {
+        if (str[index] != ' ' && isCorrectWord) {
             if (!inWord) {
-                if (!isUpperChar(*str)) isCorrectWord = false;
+                if (!isUpperChar(str[index])) isCorrectWord = false;
             }
             else {
-                if (!isLowerChar(*str)) isCorrectWord = false;
+                if (!isLowerChar(str[index])) isCorrectWord = false;
             }
             inWord = true;
         }
-        else if (*str == ' ' && inWord) {
+        else if (str[index] == ' ' && inWord) {
             count++;
             inWord = false;
         }
+        index++;
     }
     if (inWord && isCorrectWord) count++;
     return count;
@@ -90,15 +94,17 @@ unsigned int faStr3(const char *str) {
     int count = 0;
     double totalLenght = 0;
     bool inWord = false;
-    while (*str) {
-        if (*str != ' ') {
+    int index = 0;
+    while (str[index] == '\0') {
+        if (str[index] != ' ') {
             totalLenght++;
             inWord = true;
         }
-        else if (*str == ' ' && inWord) {
+        else if (str[index] == ' ' && inWord) {
             count++;
             inWord = false;
         }
+        index++;
     }
     if (inWord) count++;
     if (totalLenght == 0 || count == 0) return 0;
