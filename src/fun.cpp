@@ -61,7 +61,7 @@ unsigned int faStr3(const char *str) {
 /// <param name="ch">проверяемый символ</param>
 /// <returns>true - число, false - нет</returns>
 bool isDigit(const char ch) {
-    if (ch >= 48 && ch <= 57) {
+    if (ch >= '0' && ch <= '9') {
         return true;
     }
     return false;
@@ -72,7 +72,7 @@ bool isDigit(const char ch) {
 /// <param name="ch">Проверяемый символ</param>
 /// <returns>true - Заглавный латинский, false - нет</returns>
 bool isLowerChar(const char ch) {
-    if (ch >= 97 && ch <= 122) {
+    if (ch >= 'a' && ch <= 'z') {
         return true;
     }
     return false;
@@ -83,7 +83,7 @@ bool isLowerChar(const char ch) {
 /// <param name="ch">Проверяемый символ</param>
 /// <returns>true - прописной латинский, false - нет</returns>
 bool isUpperChar(const char ch) {
-    if (ch >= 65 && ch <= 90) {
+    if (ch >= 'A' && ch <= 'Z') {
         return true;
     }
     return false;
