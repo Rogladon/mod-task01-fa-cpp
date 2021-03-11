@@ -56,10 +56,10 @@ unsigned int faStr3(const char *str) {
 
 #pragma region Utilits
 /// <summary>
-/// Проверка символа на число (от 0 до 9)
+/// Checking a character for a digit (from 0 to 9)
 /// </summary>
-/// <param name="ch">проверяемый символ</param>
-/// <returns>true - число, false - нет</returns>
+/// <param name="ch">checking character</param>
+/// <returns>true - digit, false - other</returns>
 bool isDigit(const char ch) {
     if (ch >= '0' && ch <= '9') {
         return true;
@@ -67,10 +67,10 @@ bool isDigit(const char ch) {
     return false;
 }
 /// <summary>
-/// Проверка символа на Заглавный латинский
+/// Checking a character for a lowecase
 /// </summary>
-/// <param name="ch">Проверяемый символ</param>
-/// <returns>true - Заглавный латинский, false - нет</returns>
+/// <param name="ch">checking character</param>
+/// <returns>true - lowercase, false - other</returns>
 bool isLowerChar(const char ch) {
     if (ch >= 'a' && ch <= 'z') {
         return true;
@@ -78,10 +78,10 @@ bool isLowerChar(const char ch) {
     return false;
 }
 /// <summary>
-/// Проверка символа на прописной латинский
+/// Checking a character for Uppercase
 /// </summary>
-/// <param name="ch">Проверяемый символ</param>
-/// <returns>true - прописной латинский, false - нет</returns>
+/// <param name="ch">checking character</param>
+/// <returns>true - Uppercase, false - other</returns>
 bool isUpperChar(const char ch) {
     if (ch >= 'A' && ch <= 'Z') {
         return true;
@@ -89,10 +89,10 @@ bool isUpperChar(const char ch) {
     return false;
 }
 /// <summary>
-/// Округление до ближайшего целого
+/// Rounding to the nearest whole number
 /// </summary>
-/// <param name="d">число double</param>
-/// <returns>целочисленное округленное значение</returns>
+/// <param name="d">double number</param>
+/// <returns>int number</returns>
 int round(double d) {
     int r = int(d);
     if (d - r < 0.5) return r;
