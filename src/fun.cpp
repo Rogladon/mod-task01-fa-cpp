@@ -58,8 +58,9 @@ unsigned int faStr1(const char *str) {
             inWord = true;
         }
         else if (str[index] == ' ' && inWord) {
-            count++;
+            if(isCorrectWord) count++;
             inWord = false;
+            isCorrectWord = true;
         }
         index++;
     }
@@ -82,8 +83,9 @@ unsigned int faStr2(const char *str) {
             inWord = true;
         }
         else if (str[index] == ' ' && inWord) {
-            count++;
+            if(isCorrectWord) count++;
             inWord = false;
+            isCorrectWord = true;
         }
         index++;
     }
@@ -92,10 +94,10 @@ unsigned int faStr2(const char *str) {
 }
 unsigned int faStr3(const char *str) {
     int count = 0;
-    double totalLenght = 0;
+    int totalLenght = 0;
     bool inWord = false;
     int index = 0;
-    while (str[index] == '\0') {
+    while (str[index] != '\0') {
         if (str[index] != ' ') {
             totalLenght++;
             inWord = true;
@@ -108,5 +110,5 @@ unsigned int faStr3(const char *str) {
     }
     if (inWord) count++;
     if (totalLenght == 0 || count == 0) return 0;
-    return round(totalLenght / count);
+    return round((double)totalLenght / (double)count);
 }
