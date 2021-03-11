@@ -51,6 +51,8 @@ unsigned int faStr3(const char *str) {
             inWord = false;
         }
     }
+    if (inWord) count++;
+    if (totalLenght == 0 || count == 0) return 0;
     return round(totalLenght / count);
 }
 
